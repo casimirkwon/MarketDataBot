@@ -43,17 +43,6 @@ public class StartCommand extends DefaultCommand {
 		
 		// processing
 		
-		// build reply
-		JsonObject reply = new JsonObject();
-		reply.addProperty("method", BotAPICaller.METHOD_SEND_MESSAGE);
-		
-		JsonObject data = new JsonObject();
-		
-		data.addProperty("chat_id", msg.getChat().getId());
-		data.addProperty("text", START_MESSAGE);
-		
-		reply.add("data", data);
-		
-		return reply;
+		return buildSendMessageReply(msg, START_MESSAGE);
 	}
 }

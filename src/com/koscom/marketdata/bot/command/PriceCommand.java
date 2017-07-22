@@ -68,18 +68,8 @@ public class PriceCommand extends DefaultCommand {
 		
 		logger.info("price API uri : " + uri);
 		
-		// build reply
-		JsonObject reply = new JsonObject();
-		reply.addProperty("method", BotAPICaller.METHOD_SEND_MESSAGE);
 		
-		JsonObject data = new JsonObject();
-		
-		data.addProperty("chat_id", msg.getChat().getId());
-		data.addProperty("text", replyMsg);
-		
-		reply.add("data", data);
-		
-		return reply;
+		return buildSendMessageReply(msg, replyMsg);
 	}
 
 	private JsonObject getPriceAsJsonObject(String uri) {

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!--  bot confituration -->
+	<bot>
+	    <!--  api configuration -->
+	    <api>
+	        <!--  url configuration -->
+	        <url_prefix>https://api.telegram.org/bot</url_prefix>
+	        <key>449416267:AAFr2sLRKqVA7aNHSNWrlNqTzdrjgEB1wXQ</key>    
+        
+	        <!--  update messages configuration -->
+	        <update>
+	            <limit>100</limit>
+	            <timeout>10</timeout>
+	        </update>
+	    </api>
+
+        <!-- endpoint cofiguration -->
+        <endpoint>
+           <url>https://sandbox-apigw.koscom.co.kr/v2/market/stocks</url>
+           <apikey>l7xx230ef2235e34448c982eb192ac98e206</apikey>
+        </endpoint>
+        	    
+	    <!--  proxy configuration -->
+	    <proxy>
+	        <use>false</use>
+	        <ipaddr>192.128.0.1</ipaddr>
+	        <port>9999</port>
+	    </proxy>
+	    
+	    <!--  db configuration -->
+	    <db>
+	        <conn_url>mongodb://localhost:27017/?maxPoolSize=50</conn_url>
+	        <default_db>lunchbot</default_db>
+	    </db>
+	    
+	    <!--  message configuration -->
+	    <messages>
+	        <start>
+코스콤의 시세 정보 도우미 봇입니다.
+기능을 사용하시려면 아래의 command를 입력해주세요.
+
+/price [종목명] 해당 종목의 현재 가격을 보여줍니다.
+/start 봇의 기본적인 소개와 도움말입니다.
+
+&lt;Tip&gt;
+/price [종목명] [종목명] 과 같이 입력하시면 여러 종목의 시세 정보를 한 번에 볼 수 있습니다.
+	        </start>
+	    </messages>
+	</bot>
+</configuration>
+

@@ -8,6 +8,7 @@ import com.koscom.marketdata.bot.api.BotMessageReceiver;
 import com.koscom.marketdata.bot.command.BotCommandHandler;
 import com.koscom.marketdata.bot.command.PriceCommand;
 import com.koscom.marketdata.bot.command.StartCommand;
+import com.koscom.marketdata.bot.mq.DefaultQueueManager;
 import com.koscom.marketdata.bot.mq.MessageQueueManager;
 import com.koscom.marketdata.bot.mq.RabbitMQManager;
 import com.koscom.marketdata.bot.notifier.BotNotifierManager;
@@ -85,9 +86,11 @@ public class TelegramBot {
 			msgReceiver.stopDispatch();
 			commandWorkerPool.destroy();
 			notifierManager.stop();
-			MessageQueueManager messageMqManager = RabbitMQManager.getInstance(MessageQueueManager.QUEUE_NAME_FOR_MESSAGE);
+//			MessageQueueManager messageMqManager = RabbitMQManager.getInstance(MessageQueueManager.QUEUE_NAME_FOR_MESSAGE);
+			MessageQueueManager messageMqManager = DefaultQueueManager.getReceiveQueueManager();
 			messageMqManager.destroy();
-			MessageQueueManager notifyMqManager = RabbitMQManager.getInstance(MessageQueueManager.QUEUE_NAME_FOR_NOTIFY);
+//			MessageQueueManager notifyMqManager = RabbitMQManager.getInstance(MessageQueueManager.QUEUE_NAME_FOR_NOTIFY);
+			MessageQueueManager notifyMqManager = DefaultQueueManager.getNotifyQueueManager();
 			notifyMqManager.destroy();
 		} catch(Exception e) {
 			e.printStackTrace();

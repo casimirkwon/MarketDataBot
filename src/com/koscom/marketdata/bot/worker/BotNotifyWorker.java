@@ -28,7 +28,6 @@ public class BotNotifyWorker extends Thread implements Worker {
 	}
 	
 	synchronized public void init() {
-		// XXX : factory 제공 또는 spring f/w 사용 등으로..
 		if( mqManager == null)
 			//mqManager = RabbitMQManager.getInstance(MessageQueueManager.QUEUE_NAME_FOR_NOTIFY);
 			mqManager = DefaultQueueManager.getNotifyQueueManager();

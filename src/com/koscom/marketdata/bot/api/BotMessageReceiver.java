@@ -51,7 +51,6 @@ public class BotMessageReceiver extends Thread {
 		
 		this.alive = false;
 		
-		// XXX : factory 제공 또는 spring f/w 사용 등으로..
 		// mqManager = RabbitMQManager.getInstance(MessageQueueManager.QUEUE_NAME_FOR_MESSAGE);
 		mqManager = DefaultQueueManager.getReceiveQueueManager();
 	}

@@ -25,8 +25,6 @@ public class BotCommandWorker extends Thread implements Worker {
 	private boolean inited = false;
 
 	public BotCommandWorker() {
-		//mqManager = RabbitMQManager.getInstance();
-		//apiCaller = new BotAPICaller();
 	}
 	
 	synchronized public void init() {

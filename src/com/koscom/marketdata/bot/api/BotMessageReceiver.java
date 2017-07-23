@@ -177,11 +177,6 @@ public class BotMessageReceiver extends Thread {
 				}
 			}
 		} finally {
-//			try {
-//				httpclient.close();
-//			} catch (IOException e) {
-//				logger.warn(e);
-//			}
 		}
 	}
 
@@ -218,20 +213,6 @@ public class BotMessageReceiver extends Thread {
 	}
 	
 	private void updateOffset(long receivedOffset) {
-		/*
-		if(updateObject == null) {
-			logger.warn("updateObject is null. skip updating offset.");
-			return;
-		}
-		
-		if(!updateObject.containsKey("update_id")) {
-			logger.error("updateObject does not have 'update_id' field.");
-			return;
-		}
-		
-		long receivedOffset = (long) updateObject.get("update_id");
-		*/
-		
 		if(receivedOffset < this.offset) {
 			logger.warn("received offset is less than current offset."
 					+ " receivedOffset : " + receivedOffset 

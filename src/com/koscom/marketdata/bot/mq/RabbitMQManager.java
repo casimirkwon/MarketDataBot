@@ -68,12 +68,8 @@ public class RabbitMQManager implements MessageQueueManager {
 		
 			logger.debug("send message : " + msg);
 			try {
-				//byte[] msgBytes = JsonMessageConverter.toByteArray((JSONObject) msg);
-				//getChannel(false).basicPublish("", QUEUE_NAME, null, msgBytes);
-				
 				byte[] msgBytes = JsonMessageConverter.toByteArray((String)msg);
 				getChannel(false).basicPublish("", queueName, null, msgBytes);
-				
 			} catch (ShutdownSignalException e ) {
 				logger.error("channel may be shutdown. throwing interrupted exception...");
 				throw new InterruptedException("channel may be shutdown. throwing interrupted exception...");

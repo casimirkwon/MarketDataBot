@@ -17,8 +17,15 @@
 
         <!-- endpoint cofiguration -->
         <endpoint>
-           <url>https://sandbox-apigw.koscom.co.kr/v2/market/stocks</url>
-           <apikey>l7xx230ef2235e34448c982eb192ac98e206</apikey>
+         <marketdata>
+	           <url>https://sandbox-apigw.koscom.co.kr/v2/market/stocks</url>
+	           <apikey>l7xx230ef2235e34448c982eb192ac98e206</apikey>
+         </marketdata>
+         <!--  TODO [실습 4-01] 입력 종목 기업의 자본금 정보를 가져오는 CapitalCommand를 작성하여 추가한다. -->
+         <corpinfo>
+	           <url>https://sandbox-apigw.koscom.co.kr/v1/wavelet</url>
+	           <apikey>l7xx230ef2235e34448c982eb192ac98e206</apikey>
+         </corpinfo>
         </endpoint>
         	    
 	    <!--  proxy configuration -->

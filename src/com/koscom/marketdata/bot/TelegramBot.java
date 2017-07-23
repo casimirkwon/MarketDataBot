@@ -38,7 +38,7 @@ public class TelegramBot {
 		// register commands
 		commandHandler.register(new PriceCommand("price"));
 		commandHandler.register(new StartCommand("start"));
-
+		// TODO [실습 4-01] 입력 종목 기업의 자본금 정보를 가져오는 CapitalCommand를 작성하여 추가한다.
 		
 		// notifier manager init
 		notifierManager = BotNotifierManager.getInstance();

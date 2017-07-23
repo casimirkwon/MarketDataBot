@@ -53,8 +53,8 @@ public class MarketDataMasterHolder {
 
 	private void init() {
 		// kospi, kosdaq 종목 리스트 수신
-		String uri = config.getString(BotConfiguration.KEY_ENDPOINT_URL);
-		String apikey = config.getString(BotConfiguration.KEY_ENDPOINT_APIKEY);
+		String uri = config.getString(BotConfiguration.KEY_ENDPOINT_MARKETDATA_URL);
+		String apikey = config.getString(BotConfiguration.KEY_ENDPOINT_MARKETDATA_APIKEY);
 		
 		// load kospi
 		loadIssueList(uri, "kospi", apikey);

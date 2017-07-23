@@ -21,8 +21,11 @@ public class BotConfiguration {
 	public static String KEY_API_UPDATE_LIMIT = "bot.api.update.limit";
 	public static String KEY_API_UPDATE_TIMEOUT = "bot.api.update.timeout";
 
-	public static String KEY_ENDPOINT_URL = "bot.endpoint.url";
-	public static String KEY_ENDPOINT_APIKEY = "bot.endpoint.apikey";
+	public static String KEY_ENDPOINT_MARKETDATA_URL = "bot.endpoint.marketdata.url";
+	public static String KEY_ENDPOINT_MARKETDATA_APIKEY = "bot.endpoint.marketdata.apikey";
+
+	public static String KEY_ENDPOINT_CORPINFO_URL = "bot.endpoint.corpinfo.url";
+	public static String KEY_ENDPOINT_CORPINFO_APIKEY = "bot.endpoint.corpinfo.apikey";
 
 	public static String KEY_PROXY_USE = "bot.proxy.use";
 	public static String KEY_PROXY_IP = "bot.proxy.ipaddr";

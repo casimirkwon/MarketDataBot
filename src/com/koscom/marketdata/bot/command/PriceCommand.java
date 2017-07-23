@@ -38,8 +38,8 @@ public class PriceCommand extends DefaultCommand {
 		}
 		
 		
-		String uri = config.getString(BotConfiguration.KEY_ENDPOINT_URL);
-		String apikey = config.getString(BotConfiguration.KEY_ENDPOINT_APIKEY);
+		String uri = config.getString(BotConfiguration.KEY_ENDPOINT_MARKETDATA_URL);
+		String apikey = config.getString(BotConfiguration.KEY_ENDPOINT_MARKETDATA_APIKEY);
 		
 		String replyMsg = "";
 		

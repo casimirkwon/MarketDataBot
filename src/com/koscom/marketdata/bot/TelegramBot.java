@@ -6,6 +6,7 @@ import org.apache.commons.logging.LogFactory;
 
 import com.koscom.marketdata.bot.api.BotMessageReceiver;
 import com.koscom.marketdata.bot.command.BotCommandHandler;
+import com.koscom.marketdata.bot.command.CapitalCommand;
 import com.koscom.marketdata.bot.command.PriceCommand;
 import com.koscom.marketdata.bot.command.StartCommand;
 import com.koscom.marketdata.bot.mq.DefaultQueueManager;
@@ -39,6 +40,7 @@ public class TelegramBot {
 		commandHandler.register(new PriceCommand("price"));
 		commandHandler.register(new StartCommand("start"));
 		// TODO [실습 4-01] 입력 종목 기업의 자본금 정보를 가져오는 CapitalCommand를 작성하여 추가한다.
+		commandHandler.register(new CapitalCommand("capital"));
 		
 		// notifier manager init
 		notifierManager = BotNotifierManager.getInstance();
